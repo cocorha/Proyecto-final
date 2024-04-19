@@ -4,7 +4,7 @@
  */
 package com.mycompany.bdt1;
 
-import Clases.Jregister;
+import login.Jregister;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.mycompany.views.divizas;
 import com.mycompany.views.principal;
@@ -13,7 +13,9 @@ import com.mycompany.views.transferencia;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
@@ -46,9 +48,9 @@ public class menu extends javax.swing.JFrame {
     }
     
     private void SetDate(){
-        LocalDate now = LocalDate.now();
-        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto",
-        "Septiembre","Octubre","Noviembre","Diciembre"};
+    Date fechaActual = new Date();
+    SimpleDateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
+    datetext.setText(formatoFecha.format(fechaActual));
         
         
     }
@@ -99,7 +101,7 @@ public class menu extends javax.swing.JFrame {
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
-        principal.setBackground(new java.awt.Color(0, 51, 255));
+        principal.setBackground(new java.awt.Color(102, 102, 102));
         principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         appname.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -113,7 +115,7 @@ public class menu extends javax.swing.JFrame {
         jSeparator1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         principal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 106, 193, 13));
 
-        btnproduct.setBackground(new java.awt.Color(0, 102, 255));
+        btnproduct.setBackground(new java.awt.Color(51, 51, 51));
         btnproduct.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnproduct.setForeground(new java.awt.Color(255, 255, 255));
         btnproduct.setText("productos");
@@ -127,7 +129,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btnproduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 270, 60));
 
-        btndivizas.setBackground(new java.awt.Color(0, 102, 255));
+        btndivizas.setBackground(new java.awt.Color(51, 51, 51));
         btndivizas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btndivizas.setForeground(new java.awt.Color(255, 255, 255));
         btndivizas.setText("divizas");
@@ -141,7 +143,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btndivizas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 270, 60));
 
-        btntransfe.setBackground(new java.awt.Color(0, 102, 255));
+        btntransfe.setBackground(new java.awt.Color(51, 51, 51));
         btntransfe.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btntransfe.setForeground(new java.awt.Color(255, 255, 255));
         btntransfe.setText("transferir");
@@ -154,7 +156,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btntransfe, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 270, 59));
 
-        btnsolicitud.setBackground(new java.awt.Color(0, 102, 255));
+        btnsolicitud.setBackground(new java.awt.Color(51, 51, 51));
         btnsolicitud.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnsolicitud.setForeground(new java.awt.Color(255, 255, 255));
         btnsolicitud.setText("solicitud");
@@ -167,7 +169,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btnsolicitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 270, 60));
 
-        btnconfi.setBackground(new java.awt.Color(0, 102, 255));
+        btnconfi.setBackground(new java.awt.Color(51, 51, 51));
         btnconfi.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnconfi.setForeground(new java.awt.Color(255, 255, 255));
         btnconfi.setText("configuracion");
@@ -180,7 +182,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btnconfi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 480, 270, 60));
 
-        btnpagar.setBackground(new java.awt.Color(0, 102, 255));
+        btnpagar.setBackground(new java.awt.Color(51, 51, 51));
         btnpagar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnpagar.setForeground(new java.awt.Color(255, 255, 255));
         btnpagar.setText("pagar");
@@ -193,7 +195,7 @@ public class menu extends javax.swing.JFrame {
         });
         principal.add(btnpagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 270, 50));
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setBackground(new java.awt.Color(102, 102, 102));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("cerrar sesion");
         jButton1.setBorder(null);
@@ -206,7 +208,7 @@ public class menu extends javax.swing.JFrame {
         principal.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
         principal.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        header.setBackground(new java.awt.Color(0, 102, 255));
+        header.setBackground(new java.awt.Color(51, 51, 51));
 
         navtext.setText("Mis productos");
 

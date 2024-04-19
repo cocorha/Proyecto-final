@@ -6,6 +6,8 @@ package com.mycompany.bdt1;
 
 import login.ss;
 
+
+
 /**
  *
  * @author mp503
@@ -13,7 +15,7 @@ import login.ss;
 public class Bdt1 {
 
     public static void main(String[] args) {
-        ss login = new ss();
-        login.show();
+        ss s = new ss();
+        s.show();
     }
 }

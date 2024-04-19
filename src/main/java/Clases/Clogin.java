@@ -11,6 +11,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -25,6 +31,18 @@ public class Clogin
         String name, lastName, address, city, zipCode, phone, email, password, DNI;
         static String usuario;
         static String credito;
+        static int idCuenta = 507;
+
+    public int getIdCuenta() {
+        return idCuenta;
+    }
+
+    public void setIdCuenta(int idCuenta) {
+        this.idCuenta = idCuenta;
+    }
+
+    
+    
 
         
     public String getDNI() {
@@ -209,7 +227,10 @@ public int validarUser(JTextField Pemail, JTextField Ppassword)
     ResultSet rs = st.executeQuery(sql);
     String ac = " ";
     String valor = "N/A";
+    String valor2 = "N/A";
     String code = "N/A";
+    String code2 = "N/A";
+
         while (rs.next()) 
         {
             ac = rs.getString(2) + " " +rs.getString(3);
@@ -232,12 +253,12 @@ public int validarUser(JTextField Pemail, JTextField Ppassword)
         rs = st.executeQuery(sql);
         while (rs.next()) 
         {
-            valor = rs.getString(2);
-            code = rs.getString(6);
+            valor2 = rs.getString(2);
+            code2 = rs.getString(6);
             credito = rs.getString(6);
         }
-        Credito.setText(valor);
-        codeCredito.setText(code);
+        Credito.setText(valor2);
+        codeCredito.setText(code2);
     }
     catch (Exception e)
     {
@@ -307,19 +328,135 @@ public int validarUser(JTextField Pemail, JTextField Ppassword)
     
     public void eliminar(JTextField cuenta)
     {
-    Statement st;
+   PreparedStatement ps;
     CConexion conexion = new CConexion();
-    String sql = "delete from Accounts where id =" + usuario + "and accNumber =" + cuenta.getText();
-    int Lmonto = 0, confirmar = 0;
+    String sql = "delete from Accounts where id = ? and accNumber = ?";
+    
 
     try {
-        st = conexion.estableceConexion().createStatement();
-        ResultSet rs = st.executeQuery(sql);
+        ps = conexion.estableceConexion().prepareCall(sql);
+        ps.setString(1, usuario);
+        ps.setString(2, cuenta.getText());
+        ps.execute();
         }
     
     catch (Exception e) 
     {
         JOptionPane.showMessageDialog(null, "Error en la conexión");
     }
+    }
+    
+    
+    
+    
+    public void rellenarCombox(JComboBox box)
+    {
+    String sql = "select *from AccontTypes;";
+    Statement st;
+    CConexion conexion = new CConexion();
+    
+        try 
+        {
+        st = conexion.estableceConexion().createStatement();
+        ResultSet rs = st.executeQuery(sql);
+        
+            while (rs.next()) 
+            {                
+                box.addItem(rs.getString(2));
+            }
+        
+        } catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(null, "error");
+        }
+    }
+    static int tipoCuenta = 1;
+    public int getTipoCuenta() {
+        return tipoCuenta;
+    }
+
+    public void setTipoCuenta(int tipoCuenta) {
+        this.tipoCuenta = tipoCuenta;
+    }
+    public void rellenarComboxlbs(String Datos, JLabel interes, JLabel tarifas, JLabel limite)
+    {
+    PreparedStatement ps;
+    CConexion conexion = new CConexion();
+    String sql = "select *from AccontTypes where nameType = ?";
+    ResultSet rs = null;
+    
+
+    try {
+        ps = conexion.estableceConexion().prepareStatement(sql);
+        ps.setString(1, Datos);
+         rs = ps.executeQuery();
+         
+            while (rs.next()) 
+            {            
+                setTipoCuenta(rs.getInt(1));
+                interes.setText(rs.getString(3) + "%");
+                tarifas.setText(rs.getString(4) + "%");
+                limite.setText(rs.getString(5));
+            }
+        }
+    
+        
+        
+         catch (Exception e) 
+        {
+            JOptionPane.showMessageDialog(null, "error");
+        }
+    }
+ 
+    
+    public void creacionDeCuentas()
+    {
+        int id= 0;
+        Date fecha = new Date();
+        SimpleDateFormat formatoFecha = new SimpleDateFormat("yyyy-MM-dd");
+        String fechaActual = formatoFecha.format(fecha);
+        java.sql.Date fechaSQL = java.sql.Date.valueOf(fechaActual);
+        
+        String sql =  "SELECT MAX(accNumber) FROM Accounts;";
+        PreparedStatement ps;
+        Statement st;
+        CConexion conexion = new CConexion();
+        ResultSet rs = null;
+        
+        try 
+        {
+            st = conexion.estableceConexion().createStatement();
+            rs = st.executeQuery(sql);
+            
+            
+            while (rs.next()) 
+            {                
+                id = rs.getInt(1);
+            }
+            id = id + 1;
+            
+             sql = "insert into Accounts (id, balance, fechaDeCreacion, acType, accNumber) values (?,?,?,?,?);";
+            ps = conexion.estableceConexion().prepareStatement(sql);
+            ps.setString(1, getUsuario());
+            ps.setInt(2, 0);
+            ps.setDate(3, fechaSQL);
+            ps.setInt(4, getTipoCuenta());
+            ps.setInt(5, (id));    
+            ps.execute();
+            
+            
+           
+            
+            
+           
+            
+            JOptionPane.showMessageDialog(null, "tu cuenta fue creada con exito!");
+            
+        
+        
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "error");
+             
+        }
     }
 }

@@ -4,12 +4,12 @@
  */
 package login;
 import Clases.Clogin;
-import Clases.Jregister;
 import com.mycompany.bdt1.menu;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -34,7 +34,6 @@ public class ss extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jSeparator1 = new javax.swing.JSeparator();
         txtmail = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
@@ -43,6 +42,7 @@ public class ss extends javax.swing.JFrame {
         btnregister = new javax.swing.JButton();
         btnlogin = new javax.swing.JButton();
         logoname1 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -50,6 +50,9 @@ public class ss extends javax.swing.JFrame {
 
         txtmail.setBackground(new java.awt.Color(255, 255, 255));
         txtmail.setBorder(null);
+
+        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("mail");
@@ -59,7 +62,7 @@ public class ss extends javax.swing.JFrame {
 
         jLabel3.setText("password");
 
-        btnregister.setBackground(new java.awt.Color(51, 153, 255));
+        btnregister.setBackground(new java.awt.Color(51, 51, 51));
         btnregister.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnregister.setForeground(new java.awt.Color(255, 255, 255));
         btnregister.setText("register");
@@ -70,7 +73,7 @@ public class ss extends javax.swing.JFrame {
             }
         });
 
-        btnlogin.setBackground(new java.awt.Color(51, 153, 255));
+        btnlogin.setBackground(new java.awt.Color(51, 51, 51));
         btnlogin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnlogin.setForeground(new java.awt.Color(255, 255, 255));
         btnlogin.setText("login");
@@ -81,10 +84,13 @@ public class ss extends javax.swing.JFrame {
             }
         });
 
-        logoname1.setBackground(new java.awt.Color(51, 51, 255));
+        logoname1.setBackground(new java.awt.Color(255, 255, 255));
         logoname1.setFont(new java.awt.Font("Roboto Medium", 0, 36)); // NOI18N
-        logoname1.setForeground(new java.awt.Color(0, 0, 255));
+        logoname1.setForeground(new java.awt.Color(255, 0, 0));
         logoname1.setText("BDT");
+
+        jSeparator3.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator3.setForeground(new java.awt.Color(102, 102, 102));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -104,9 +110,9 @@ public class ss extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addComponent(jLabel2)
                         .addComponent(txtmail, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                        .addComponent(jSeparator1)
                         .addComponent(txtpassword)
-                        .addComponent(jSeparator2)))
+                        .addComponent(jSeparator2)
+                        .addComponent(jSeparator3)))
                 .addContainerGap(164, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -119,7 +125,7 @@ public class ss extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -152,9 +158,11 @@ public class ss extends javax.swing.JFrame {
         if(login.validarUser(txtmail, txtpassword)== 1)
         {
             menu Menu = null;
-            try {
+            try 
+            {
                 Menu = new menu();
-            } catch (SQLException ex) {
+            } 
+            catch (SQLException ex) {
                 Logger.getLogger(ss.class.getName()).log(Level.SEVERE, null, ex);
             }
             Menu.show();
@@ -213,8 +221,8 @@ public class ss extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JLabel logoname1;
     private javax.swing.JTextField txtmail;
     private javax.swing.JPasswordField txtpassword;

@@ -4,6 +4,9 @@
  */
 package com.mycompany.views;
 
+
+import servicios.crearCuenta;
+import servicios.delete;
 /**
  *
  * @author mp503
@@ -47,15 +50,15 @@ public class solicitud extends javax.swing.JPanel {
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Solicitudes");
 
-        jSeparator1.setBackground(new java.awt.Color(0, 51, 255));
-        jSeparator1.setForeground(new java.awt.Color(0, 51, 255));
+        jSeparator1.setBackground(new java.awt.Color(255, 51, 51));
+        jSeparator1.setForeground(new java.awt.Color(255, 51, 51));
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
-        jPanel1.setForeground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(255, 51, 51));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -78,9 +81,10 @@ public class solicitud extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        panelbtn1.setBackground(new java.awt.Color(0, 102, 255));
+        panelbtn1.setBackground(new java.awt.Color(255, 51, 51));
+        panelbtn1.setForeground(new java.awt.Color(51, 51, 51));
 
-        jButton1.setBackground(new java.awt.Color(51, 255, 255));
+        jButton1.setBackground(new java.awt.Color(255, 51, 51));
         jButton1.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Solicita tu tarjeta de credito");
@@ -104,9 +108,10 @@ public class solicitud extends javax.swing.JPanel {
             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
         );
 
-        panelbtn2.setBackground(new java.awt.Color(0, 102, 255));
+        panelbtn2.setBackground(new java.awt.Color(255, 51, 51));
+        panelbtn2.setForeground(new java.awt.Color(51, 51, 51));
 
-        jButton2.setBackground(new java.awt.Color(51, 255, 255));
+        jButton2.setBackground(new java.awt.Color(255, 51, 51));
         jButton2.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Solicita tu prestamo personal");
@@ -132,13 +137,14 @@ public class solicitud extends javax.swing.JPanel {
             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 63, Short.MAX_VALUE)
         );
 
-        jSeparator2.setBackground(new java.awt.Color(204, 204, 255));
-        jSeparator2.setForeground(new java.awt.Color(0, 102, 255));
+        jSeparator2.setBackground(new java.awt.Color(255, 51, 51));
+        jSeparator2.setForeground(new java.awt.Color(255, 51, 51));
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        panelbtn3.setBackground(new java.awt.Color(0, 102, 255));
+        panelbtn3.setBackground(new java.awt.Color(255, 51, 51));
+        panelbtn3.setForeground(new java.awt.Color(51, 51, 51));
 
-        jButton3.setBackground(new java.awt.Color(0, 255, 255));
+        jButton3.setBackground(new java.awt.Color(255, 51, 51));
         jButton3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Aumento de limite");
@@ -157,9 +163,10 @@ public class solicitud extends javax.swing.JPanel {
             .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
+        jPanel2.setForeground(new java.awt.Color(51, 51, 51));
 
-        jButton4.setBackground(new java.awt.Color(0, 255, 255));
+        jButton4.setBackground(new java.awt.Color(255, 51, 51));
         jButton4.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Cancelar productos");
@@ -191,10 +198,6 @@ public class solicitud extends javax.swing.JPanel {
             .addGroup(bgLayout.createSequentialGroup()
                 .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(bgLayout.createSequentialGroup()
-                        .addGap(229, 229, 229)
-                        .addComponent(jSeparator1)
-                        .addGap(131, 131, 131))
-                    .addGroup(bgLayout.createSequentialGroup()
                         .addGroup(bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(panelbtn2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(panelbtn1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -209,6 +212,10 @@ public class solicitud extends javax.swing.JPanel {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(77, 77, 77))
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(319, 319, 319)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         bgLayout.setVerticalGroup(
             bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,16 +253,17 @@ public class solicitud extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        crearCuenta Ncuenta = new crearCuenta();
+        Ncuenta.show();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        delete eliminar = new delete();
+        eliminar.show();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        delete eliminar = new delete();
-        eliminar.show();
+        
         
         }//GEN-LAST:event_jButton2ActionPerformed
 

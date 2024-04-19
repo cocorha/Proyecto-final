@@ -44,12 +44,13 @@ public class divizas extends javax.swing.JPanel {
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel6.setBackground(new java.awt.Color(255, 51, 51));
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 102, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 51, 51));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("divizas");
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 51, 51));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         titulotxt1.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -96,7 +97,7 @@ public class divizas extends javax.swing.JPanel {
                 .addGap(32, 32, 32))
         );
 
-        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 51, 51));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         titulotxt2.setFont(new java.awt.Font("Roboto Light", 1, 18)); // NOI18N
@@ -141,8 +142,8 @@ public class divizas extends javax.swing.JPanel {
                 .addGap(24, 24, 24))
         );
 
-        jSeparator1.setBackground(new java.awt.Color(0, 102, 255));
-        jSeparator1.setForeground(new java.awt.Color(0, 102, 255));
+        jSeparator1.setBackground(new java.awt.Color(255, 51, 51));
+        jSeparator1.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
         bg.setLayout(bgLayout);
