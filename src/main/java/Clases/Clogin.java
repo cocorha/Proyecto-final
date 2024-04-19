@@ -31,15 +31,7 @@ public class Clogin
         String name, lastName, address, city, zipCode, phone, email, password, DNI;
         static String usuario;
         static String credito;
-        static int idCuenta = 507;
-
-    public int getIdCuenta() {
-        return idCuenta;
-    }
-
-    public void setIdCuenta(int idCuenta) {
-        this.idCuenta = idCuenta;
-    }
+        
 
     
     
